@@ -17,7 +17,7 @@ import org.jetbrains.annotations.NotNull;
 import top.theillusivec4.curios.api.SlotContext;
 import top.theillusivec4.curios.api.type.capability.ICurio;
 
-public class BasicWolfDoll extends CurioItem {
+public final class BasicWolfDoll extends CurioItem {
     public BasicWolfDoll() {
         super(new Properties());
     }

@@ -12,7 +12,7 @@ import net.neoforged.neoforge.data.event.GatherDataEvent;
 import java.util.concurrent.CompletableFuture;
 
 @EventBusSubscriber(bus = EventBusSubscriber.Bus.MOD, modid = ArtisansLegendary.NAMESPACE)
-public class ALDataHandler {
+public final class ALDataHandler {
 
     @SubscribeEvent
     public static void gatherData(GatherDataEvent event) {

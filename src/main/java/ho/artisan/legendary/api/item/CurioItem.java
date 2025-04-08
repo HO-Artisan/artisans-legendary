@@ -9,7 +9,7 @@ import top.theillusivec4.curios.api.SlotContext;
 import top.theillusivec4.curios.api.type.capability.ICurioItem;
 
 @SuppressWarnings("all")
-public class CurioItem extends Item implements ICurioItem {
+public abstract class CurioItem extends Item implements ICurioItem {
     public CurioItem(Properties properties) {
         super(properties.stacksTo(1));
     }

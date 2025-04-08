@@ -7,7 +7,7 @@ import org.jetbrains.annotations.NotNull;
 import top.theillusivec4.curios.api.SlotContext;
 import top.theillusivec4.curios.api.type.capability.ICurio;
 
-public class DemonWolfDoll extends CurioItem {
+public final class DemonWolfDoll extends CurioItem {
     public DemonWolfDoll() {
         super(new Properties().fireResistant());
     }
