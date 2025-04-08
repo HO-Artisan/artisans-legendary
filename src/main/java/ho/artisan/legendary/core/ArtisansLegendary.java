@@ -1,7 +1,7 @@
 package ho.artisan.legendary.core;
 
-import ho.artisan.legendary.core.init.ItemInit;
 import ho.artisan.legendary.config.ALConfigHolder;
+import ho.artisan.legendary.core.init.ItemInit;
 import me.shedaniel.autoconfig.AutoConfig;
 import me.shedaniel.autoconfig.serializer.Toml4jConfigSerializer;
 import net.neoforged.bus.api.IEventBus;

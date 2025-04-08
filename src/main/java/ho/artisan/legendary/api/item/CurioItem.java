@@ -1,17 +1,21 @@
 package ho.artisan.legendary.api.item;
 
+import ho.artisan.legendary.core.CuriosUtil;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
-import top.theillusivec4.curios.api.CuriosApi;
+import net.minecraft.world.item.Rarity;
 import top.theillusivec4.curios.api.CuriosTags;
 import top.theillusivec4.curios.api.SlotContext;
 import top.theillusivec4.curios.api.type.capability.ICurioItem;
 
+/**
+ * The based of curio item.
+ */
 @SuppressWarnings("all")
 public abstract class CurioItem extends Item implements ICurioItem {
     public CurioItem(Properties properties) {
-        super(properties.stacksTo(1));
+        super(properties.stacksTo(1).rarity(Rarity.UNCOMMON));
     }
 
     public TagKey<Item> getCurioTag() {
@@ -20,21 +24,7 @@ public abstract class CurioItem extends Item implements ICurioItem {
 
     @Override
     public boolean canEquip(SlotContext slotContext, ItemStack stack) {
-        final var entity = slotContext.entity();
-        final var slotsOpt = CuriosApi.getCuriosHelper().getEquippedCurios(entity);
-        if (slotsOpt.isEmpty()) {
-            return true;
-        }
-
-        final var slots = slotsOpt.get();
-        for (int i = 0; i < slots.getSlots(); i++) {
-            final var item = slots.getStackInSlot(i);
-            if (item.is(stack.getItem())) {
-                return false;
-            }
-        }
-
-        return true;
+        return !CuriosUtil.entityEquippedCurio(slotContext.entity(), stack.getItem());
     }
 
     @Override

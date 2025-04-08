@@ -17,6 +17,11 @@ import org.jetbrains.annotations.NotNull;
 import top.theillusivec4.curios.api.SlotContext;
 import top.theillusivec4.curios.api.type.capability.ICurio;
 
+/*
+ * 毛绒狼娃娃能够让你安全的踏过细雪。
+ * “普通的狼娃娃，但你知道它没有看着那么普通。“”
+ * 制作更高级狼娃娃的基本原料。
+ */
 public final class BasicWolfDoll extends CurioItem {
     public BasicWolfDoll() {
         super(new Properties());
@@ -29,21 +34,17 @@ public final class BasicWolfDoll extends CurioItem {
         return InteractionResultHolder.success(player.getItemInHand(usedHand));
     }
 
+    private static void spawnDemonWolf(Level world, Vec3 pos) {
+        final var item = new ItemEntity(world, pos.x, pos.y, pos.z, ItemInit.DEMON_WOLF_DOLL.toStack());
+        item.setDefaultPickUpDelay();
+        world.addFreshEntity(item);
+    }
+
     @Override
     public void onDestroyed(ItemEntity itemEntity, DamageSource damageSource) {
         if (damageSource == itemEntity.damageSources().lava()) {
             spawnDemonWolf(itemEntity.level(), itemEntity.position());
         }
-    }
-
-    @Override
-    public boolean canWalkOnPowderedSnow(ItemStack stack, LivingEntity wearer) {
-        return true;
-    }
-
-    @Override
-    public boolean canWalkOnPowderedSnow(SlotContext slotContext, ItemStack stack) {
-        return true;
     }
 
     @Override
@@ -57,9 +58,13 @@ public final class BasicWolfDoll extends CurioItem {
         return ICurio.DropRule.DESTROY;
     }
 
-    private static void spawnDemonWolf(Level world, Vec3 pos) {
-        final var item = new ItemEntity(world, pos.x, pos.y, pos.z, ItemInit.DEMON_WOLF_DOLL.toStack());
-        item.setDefaultPickUpDelay();
-        world.addFreshEntity(item);
+    @Override
+    public boolean canWalkOnPowderedSnow(ItemStack stack, LivingEntity wearer) {
+        return true;
+    }
+
+    @Override
+    public boolean canWalkOnPowderedSnow(SlotContext slotContext, ItemStack stack) {
+        return true;
     }
 }
