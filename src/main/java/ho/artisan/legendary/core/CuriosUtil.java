@@ -5,6 +5,7 @@ import net.minecraft.world.item.Item;
 import top.theillusivec4.curios.api.CuriosApi;
 import top.theillusivec4.curios.api.type.capability.ICurioItem;
 
+@SuppressWarnings("all")
 public final class CuriosUtil {
     public static boolean entityEquippedCurio(final LivingEntity entity, final Item item) {
         if (!(item instanceof ICurioItem curio)) {
