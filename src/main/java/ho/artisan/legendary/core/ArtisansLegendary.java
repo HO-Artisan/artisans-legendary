@@ -1,6 +1,6 @@
-package ho.artisan.legendary;
+package ho.artisan.legendary.core;
 
-import ho.artisan.legendary.common.items.ItemInit;
+import ho.artisan.legendary.core.init.ItemInit;
 import ho.artisan.legendary.config.ALConfigHolder;
 import me.shedaniel.autoconfig.AutoConfig;
 import me.shedaniel.autoconfig.serializer.Toml4jConfigSerializer;
@@ -9,7 +9,7 @@ import net.neoforged.fml.ModContainer;
 import net.neoforged.fml.common.Mod;
 
 @Mod(ArtisansLegendary.NAMESPACE)
-public class ArtisansLegendary {
+public final class ArtisansLegendary {
 
     public static final String NAMESPACE = "artisans_legendary";
     public static final String NAME = "Artisans Legendary";

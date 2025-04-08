@@ -1,13 +1,16 @@
-package ho.artisan.legendary.common.items;
+package ho.artisan.legendary.core.init;
 
-import ho.artisan.legendary.ArtisansLegendary;
+import ho.artisan.legendary.common.item.BasicWolfDoll;
+import ho.artisan.legendary.common.item.DemonWolfDoll;
+import ho.artisan.legendary.core.ArtisansLegendary;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Rarity;
 import net.neoforged.neoforge.registries.DeferredItem;
 import net.neoforged.neoforge.registries.DeferredRegister;
 
-public class ItemInit {
+import java.util.function.Supplier;
 
+public final class ItemInit {
     public static final DeferredRegister.Items ITEMS =
             DeferredRegister.createItems(ArtisansLegendary.NAMESPACE);
 
@@ -27,4 +30,11 @@ public class ItemInit {
                             .rarity(Rarity.UNCOMMON)
             );
 
+    public static final DeferredItem<Item> WOLF_DOLL = registerItem("wolf_doll", BasicWolfDoll::new);
+    public static final DeferredItem<Item> DEMON_WOLF_DOLL = registerItem("demon_wolf_doll", DemonWolfDoll::new);
+
+
+    private static DeferredItem<Item> registerItem(String name, Supplier<Item> item) {
+        return ITEMS.registerItem(name, it -> item.get());
+    }
 }

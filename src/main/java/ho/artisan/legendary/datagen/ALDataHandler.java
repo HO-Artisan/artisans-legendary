@@ -1,6 +1,6 @@
 package ho.artisan.legendary.datagen;
 
-import ho.artisan.legendary.ArtisansLegendary;
+import ho.artisan.legendary.core.ArtisansLegendary;
 import ho.artisan.legendary.datagen.models.ItemModelsProvider;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
