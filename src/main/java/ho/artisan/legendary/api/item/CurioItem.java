@@ -9,6 +9,8 @@ import top.theillusivec4.curios.api.CuriosTags;
 import top.theillusivec4.curios.api.SlotContext;
 import top.theillusivec4.curios.api.type.capability.ICurioItem;
 
+import java.util.List;
+
 /**
  * The based of curio item.
  */
@@ -18,8 +20,8 @@ public abstract class CurioItem extends Item implements ICurioItem {
         super(properties.stacksTo(1).rarity(Rarity.UNCOMMON));
     }
 
-    public TagKey<Item> getCurioTag() {
-        return CuriosTags.CURIO;
+    public List<TagKey<Item>> getCurioTag() {
+        return List.of(CuriosTags.CURIO);
     }
 
     @Override

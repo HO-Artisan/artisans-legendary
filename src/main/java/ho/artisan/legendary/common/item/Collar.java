@@ -3,20 +3,27 @@ package ho.artisan.legendary.common.item;
 import com.google.common.collect.Lists;
 import ho.artisan.legendary.api.item.CurioItem;
 import net.minecraft.network.chat.Component;
+import net.minecraft.tags.TagKey;
 import net.minecraft.world.entity.SlotAccess;
+import net.minecraft.world.entity.monster.EnderMan;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.ClickAction;
 import net.minecraft.world.inventory.Slot;
-import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.Items;
-import net.minecraft.world.item.Rarity;
-import net.minecraft.world.item.TooltipFlag;
+import net.minecraft.world.item.*;
+import top.theillusivec4.curios.api.CuriosTags;
+import top.theillusivec4.curios.api.SlotContext;
+
 import java.util.List;
 import java.util.Random;
 
 public class Collar extends CurioItem {
     public Collar() {
         super(new Properties().stacksTo(1).rarity(Rarity.EPIC));
+    }
+
+    @Override
+    public List<TagKey<Item>> getCurioTag() {
+        return List.of(CuriosTags.NECKLACE, CuriosTags.BRACELET, CuriosTags.HEAD);
     }
 
     @Override
@@ -30,6 +37,11 @@ public class Collar extends CurioItem {
         if (action != ClickAction.SECONDARY) return false;
         access.set(Items.BONE.getDefaultInstance());
         return true;
+    }
+
+    @Override
+    public boolean isEnderMask(SlotContext slotContext, EnderMan enderMan, ItemStack stack) {
+        return false;
     }
 
     /* Dirty Method for Client */

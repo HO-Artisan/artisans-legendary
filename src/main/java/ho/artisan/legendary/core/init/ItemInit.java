@@ -1,6 +1,7 @@
 package ho.artisan.legendary.core.init;
 
 import ho.artisan.legendary.common.item.BasicWolfDoll;
+import ho.artisan.legendary.common.item.Collar;
 import ho.artisan.legendary.common.item.DemonWolfDoll;
 import ho.artisan.legendary.core.ArtisansLegendary;
 import net.minecraft.world.item.Item;
@@ -30,6 +31,7 @@ public final class ItemInit {
                             .rarity(Rarity.UNCOMMON)
             );
 
+    public static final DeferredItem<Item> WOLF_COLLAR = registerItem("demon_wolf_doll", Collar::new);
     public static final DeferredItem<Item> WOLF_DOLL = registerItem("wolf_doll", BasicWolfDoll::new);
     public static final DeferredItem<Item> DEMON_WOLF_DOLL = registerItem("demon_wolf_doll", DemonWolfDoll::new);
 
