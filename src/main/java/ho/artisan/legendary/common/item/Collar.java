@@ -47,7 +47,9 @@ public class Collar extends CurioItem {
             "聚光灯下!",
             "非人类!",
             "桌子下有非常多凤梨，而你，我的朋友，你一只都吃不到",
-            "我有两只，给你零只"
+            "我有两只，给你零只",
+            "狼生短暂，多吃凤梨！",
+            "最近还“嚎”吗？"
     );
 
     private static final char[] code = "@#$%^&".toCharArray();
