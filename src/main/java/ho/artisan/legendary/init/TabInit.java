@@ -19,7 +19,7 @@ public class TabInit {
     static {
         DEFAULT_TAB = TABS.register("default_tab", () -> CreativeModeTab.builder()
                 .title(Component.translatable("%s.%s.%s".formatted(ArtisansLegendary.NAMESPACE, "CreativeTab", "default")))
-                .icon(ItemInit.CURSED_IRON_RING::toStack)
+                // .icon(ItemInit.CURSED_IRON_RING::toStack)
                 .displayItems((idp, output) ->
                     ItemInit.ITEMS.getEntries().stream()
                             .map(Supplier::get)
@@ -29,7 +29,7 @@ public class TabInit {
 
         EASY_EGG_TAB = TABS.register("easy_egg", () -> CreativeModeTab.builder()
                 .title(Component.translatable("%s.%s.%s".formatted(ArtisansLegendary.NAMESPACE, "CreativeTab", "easyEgg")))
-                .icon(ItemInit.WOLF_COLLAR::toStack)
+                // .icon(ItemInit.WOLF_COLLAR::toStack)
                 .displayItems((idp, output) ->
                         ItemInit.EASY_EGG.getEntries().stream()
                                 .map(Supplier::get)

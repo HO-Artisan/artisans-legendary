@@ -1,5 +1,7 @@
 repositories {
     maven { url 'https://maven.shedaniel.me/' }
+    maven {url  uri("https://maven.theillusivec4.top/")}
+
     exclusiveContent {
         forRepository {
             maven {
@@ -15,7 +17,9 @@ repositories {
 
 dependencies {
     api 'me.shedaniel.cloth:cloth-config-neoforge:15.0.140'
-    api 'maven.modrinth:curios:9.4.1+1.21.1'
+
+    runtimeOnly "top.theillusivec4.curios:curios-neoforge:9.4.1+1.21.1"
+    compileOnly "top.theillusivec4.curios:curios-neoforge:9.4.1+1.21.1:api"
 
     implementation 'maven.modrinth:eternal-starlight:0.4.2-hotfix+1.21.1+neoforge'
 }

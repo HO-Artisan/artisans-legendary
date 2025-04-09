@@ -1,8 +1,7 @@
 package ho.artisan.legendary;
 
-import ho.artisan.legendary.config.ALConfigHolder;
-import ho.artisan.legendary.init.BlockInit;
-import ho.artisan.legendary.init.ItemInit;
+import ho.artisan.legendary.init.ALConfigHolder;
+import ho.artisan.legendary.init.*;
 import me.shedaniel.autoconfig.AutoConfig;
 import me.shedaniel.autoconfig.serializer.Toml4jConfigSerializer;
 import net.neoforged.bus.api.IEventBus;
@@ -20,6 +19,10 @@ public final class ArtisansLegendary {
         AutoConfig.register(ALConfigHolder.class, Toml4jConfigSerializer::new);
 
         ItemInit.ITEMS.register(modBus);
+        ItemInit.EASY_EGG.register(modBus);
         BlockInit.BLOCKS.register(modBus);
+        TileInit.TILE_TYPES.register(modBus);
+        EffectInit.EFFECTS.register(modBus);
+        TabInit.TABS.register(modBus);
     }
 }
