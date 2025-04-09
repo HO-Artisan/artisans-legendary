@@ -1,7 +1,7 @@
 package ho.artisan.legendary.common.event;
 
-import ho.artisan.legendary.core.CuriosUtil;
-import ho.artisan.legendary.core.init.ItemInit;
+import ho.artisan.legendary.util.CuriosUtil;
+import ho.artisan.legendary.init.ItemInit;
 import net.minecraft.world.entity.LivingEntity;
 import net.neoforged.bus.api.EventPriority;
 import net.neoforged.bus.api.SubscribeEvent;

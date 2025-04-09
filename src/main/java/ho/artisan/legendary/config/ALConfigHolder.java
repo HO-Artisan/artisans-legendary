@@ -1,6 +1,6 @@
 package ho.artisan.legendary.config;
 
-import ho.artisan.legendary.core.ArtisansLegendary;
+import ho.artisan.legendary.ArtisansLegendary;
 import me.shedaniel.autoconfig.ConfigData;
 import me.shedaniel.autoconfig.annotation.Config;
 

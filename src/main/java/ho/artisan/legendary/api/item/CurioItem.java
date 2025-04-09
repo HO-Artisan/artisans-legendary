@@ -1,6 +1,6 @@
 package ho.artisan.legendary.api.item;
 
-import ho.artisan.legendary.core.CuriosUtil;
+import ho.artisan.legendary.util.CuriosUtil;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;

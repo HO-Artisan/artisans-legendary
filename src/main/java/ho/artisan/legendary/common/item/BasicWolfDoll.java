@@ -1,7 +1,7 @@
 package ho.artisan.legendary.common.item;
 
 import ho.artisan.legendary.api.item.CurioItem;
-import ho.artisan.legendary.core.init.ItemInit;
+import ho.artisan.legendary.init.ItemInit;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionHand;

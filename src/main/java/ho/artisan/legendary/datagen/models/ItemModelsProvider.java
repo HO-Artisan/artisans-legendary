@@ -1,7 +1,7 @@
 package ho.artisan.legendary.datagen.models;
 
-import ho.artisan.legendary.core.ArtisansLegendary;
-import ho.artisan.legendary.core.init.ItemInit;
+import ho.artisan.legendary.ArtisansLegendary;
+import ho.artisan.legendary.init.ItemInit;
 import net.minecraft.data.PackOutput;
 import net.neoforged.neoforge.client.model.generators.ItemModelProvider;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;

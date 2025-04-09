@@ -76,7 +76,10 @@ public class Collar extends CurioItem {
         if (textHolder.isEmpty()) textHolder = texts.get(random.nextInt(texts.size()));
 
         if (textInRender.length() < textHolder.length() || !textInRender.toString().equals(textHolder)) {
-            if (++tickOfRender < 5) return Component.literal(textInRender.toString());
+            if (++tickOfRender < 5) {
+                return Component.literal(textInRender.toString());
+            }
+
             tickOfRender = 0;
             if (!textInRender.isEmpty()) {
                 var pointer = textInRender.length() - 1;
@@ -86,9 +89,12 @@ public class Collar extends CurioItem {
                     return Component.literal(textInRender.toString());
                 }
             }
+
             textInRender.append(code[random.nextInt(code.length)]);
             return Component.literal(textInRender.toString());
-        } else if (++tickOfRender < maxTickOfRender) return Component.literal(textInRender.toString());
+        } else if (++tickOfRender < maxTickOfRender) {
+            return Component.literal(textInRender.toString());
+        }
 
         tickOfRender = 0;
         textHolder = "";
